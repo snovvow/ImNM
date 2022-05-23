@@ -70,13 +70,4 @@ int main(int argc, char *argv[]) {
     ds(1);
 
     printf("%d", distanceSave[D]);
-
-    // for (int i = 0; i < D; i++) {
-    //     printf("(%d)", distanceSave[i]);
-    // }
-    // for (int i = 0; i < L; i++) {
-    //     load a = q.top();
-    //     q.pop();
-    //     printf("%d %d %d\n", a.start, a.end, a.length);
-    // }
 }
