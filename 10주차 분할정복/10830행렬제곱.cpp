@@ -16,6 +16,11 @@ long long matrix[5][5];
 long long result[5][5];
 long long temp[5][5];
 
+//b B 10
+//   B^5 * B^5  -- 
+//   B^2 * B^2 * B  -- 
+//   B * B  -- 
+
 void calculateMatrix(long long x[5][5], long long y[5][5]) {
     for (int i = 0; i < n; i++) {
         for (int k = 0; k < n; k++) {
@@ -60,6 +65,8 @@ int main(int argc, char *argv[]) {
             cin >> matrix[i][k];
         }
         result[i][i] = 1;
+        // 1 0   단위 행렬 * A = A
+        // 0 1
     }
     divide(B);
 

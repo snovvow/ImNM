@@ -34,7 +34,6 @@ int babySharkSize = 2;
 int eatCnt = 0;
 int sharkX, sharkY;
 
-// queue<tuple<int, int, int>> q;
 bool flag = false;
 
 bool compare(pair<int, int> a, pair<int, int> b) {
@@ -71,16 +70,11 @@ void BFS(int x, int y) {
                     }
                     list.push_back(make_pair(getX, getY));
                 }
-                // int saveY = ;
 
                 q.pop();
             }
 
             sort(list.begin(), list.end(), compare);
-            // for (int i = 0; i < list.size(); i++) {
-            //     printf("same : (%d , %d)\n", list[i].first, list[i].second);
-            // }
-
             // 상어위치 최신화
             sharkX = list[0].first;
             sharkY = list[0].second;
@@ -95,15 +89,10 @@ void BFS(int x, int y) {
             }
 
             // 먹으면 먹이없애고
-            // printf("sharksize %d\n", babySharkSize);
 
             v[sharkX][sharkY] = 0;
             fishCount--;
             cnt += depth;
-            // printf("eat (%d %d %d %d)\n\n", sharkX, sharkY, depth, cnt);
-
-            // printf("sharksize %f %d\n", babySharkSize, (int)babySharkSize);
-
             break;
         }
         q.pop();
@@ -117,16 +106,11 @@ void BFS(int x, int y) {
                 continue;
             }
             if ((int)babySharkSize < v[newX][newY]) {
-                // 크기가 같은 물고기는 지나감
-                // printf("check (%d %d)\n", newX, newY);
 
                 continue;
             }
 
             if (!ch[newX][newY]) {
-                // printf("%d %d (%d) (%d)\n", newX, newY, depth + 1,
-                //        v[newX][newY]);
-
                 ch[newX][newY] = true;
                 q.push(make_tuple(newX, newY, depth + 1));
             }
@@ -155,8 +139,6 @@ int main(int argc, char *argv[]) {
     while (1) {
 
         // 엄마 상어
-
-        // printf("input (%d %d)\n", sharkX, sharkY);
         flag = false;
 
         if (fishCount > 0) {
@@ -173,21 +155,8 @@ int main(int argc, char *argv[]) {
         }
         for (int i = 1; i <= n; i++) {
             for (int k = 1; k <= n; k++) {
-                // printf("%d ", v[i][k]);
                 ch[i][k] = false;
             }
-            // printf("\n");
         }
-
-        // printf("----------\n\n\n\n");
-
-        //     // bfs 탐색결과 먹을 수 있는 물고기가 없을 때??
     }
-
-    // 1마리 그거
-    //  여러마리면 가장 가까운 ( bfs )
-    //  가장 가까운놈이 여러마리면 위  ,위도 여러마리면 가장 왼쪽
-    // }
-
-    // output
 }

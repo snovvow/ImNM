@@ -25,22 +25,17 @@ void dfs(int depth, int next) {
             if (check[i] == 0) {
                 for (int k = 1; k <= N; k++) {
                     if (check[k] == 0) {
-                        // printf("link(%d %d)", i, k);
                         link += s[i][k];
                     }
                 }
             } else {
                 for (int k = 1; k <= N; k++) {
                     if (check[k] != 0) {
-                        // printf("start(%d %d)", i, k);
                         start += s[i][k];
                     }
                 }
             }
         }
-        // printf("\n");
-
-        // printf("%d %d\n", start, link);
 
         answer = min(answer, abs(start - link));
         return;
@@ -50,7 +45,6 @@ void dfs(int depth, int next) {
         if (check[k] == 1) {
             continue;
         }
-        // printf("(%d)", k);
 
         check[k] = 1;
         dfs(depth + 1, k + 1);

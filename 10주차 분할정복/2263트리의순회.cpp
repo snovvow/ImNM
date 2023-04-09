@@ -24,8 +24,8 @@ void preOrder(int inOrderLeft, int inOrderRight, int postOrderLeft,
 
     int inOrderRootIndex = Index[valueOfLastIndex];
     int leftSize = inOrderRootIndex - inOrderLeft;
-
     cout << valueOfLastIndex << ' '; // root 값 출력
+
     // cout << inOrderRootIndex << "asdfasdf";
     //중위 정보
     // [왼쪽] / root / [오른쪽]

@@ -26,18 +26,6 @@ int dC[5] = {0, 1, 0, -1, 0};
 void dfs(int r, int c, int depth, int eatCount) {
 
     if (depth == T) {
-        // // printf("result eatCount %d \n", eatCount);
-        // int count = 0;
-
-        // for (int i = 1; i <= R; i++) {
-        //     for (int k = 1; k <= C; k++) {
-        //         if (eat[i][k] == true) {
-        //             printf("(%d %d) eat \n", i, k);
-        //             count++;
-        //         }
-        //     }
-        // }
-        // printf("=------= \n");
         result = max(result, eatCount);
 
         return;
@@ -58,18 +46,7 @@ void dfs(int r, int c, int depth, int eatCount) {
         if (map[newR][newC] == '#') {
             continue;
         }
-        //방문한 곳이면
-        // if (map[newR][newC] == true) {
-        //     continue;
-        // }
-        // 먹이먹는경우
-        // int newEatCount = eatCount;
-        // if (map[newR][newC] == 'S' && eat[newR][newC] == false) {
-        //     newEatCount++;
 
-        //     // printf("(%d %d) %d eat \n", newR, newC, newEatCount);
-        // }
-        // visit[newR][newC] = true;
         if (map[newR][newC] == 'S') {
             map[newR][newC] = '.';
             dfs(newR, newC, depth + 1, eatCount + 1);
@@ -79,7 +56,6 @@ void dfs(int r, int c, int depth, int eatCount) {
             dfs(newR, newC, depth + 1, eatCount);
         }
 
-        // visit[newR][newC] = false;
     }
 }
 
